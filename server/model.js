@@ -7,10 +7,15 @@ const getData = (req, res) => {
   });
 };
 const postData = (req, res) => {
-  db.update(req.body.data, { upsert: true }, (err, doc) => {
-    if (err) res.status(500).send(err);
-    res.status(201).send(doc);
-  });
+  console.log(req.body);
+  let post = new db(req.body);
+  post.save()
+    .then(() => res.sendStatus(201))
+    .catch(err => res.status(201).send(doc));
+  // db.update(req.body.data, { upsert: true }, (err, doc) => {
+    // if (err) res.status(500).send(err);
+    // res.status(201).send(doc);
+  // });
 };
 const updateData = () => {
   db.query();

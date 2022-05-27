@@ -3,6 +3,7 @@ import { useData } from '../Context';
 import Example from './Example';
 
 export default function Record({ name, prompt, examples}) {
+  
   console.log('name: ', name);
   console.log('prompt: ', prompt);
   console.log('examples: ', examples);

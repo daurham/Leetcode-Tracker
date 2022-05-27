@@ -1,6 +1,6 @@
 // MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/leetcode', () => console.log('listening to mongo'));
+mongoose.connect('mongodb://localhost:27017/leetcode', () => console.log('Running mongo..'));
 
 const Entry = mongoose.model('Entry', 
   {

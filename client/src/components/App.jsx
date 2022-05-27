@@ -14,9 +14,9 @@ export default function App() {
       <h1>Leetcode Tracker</h1>
       {/* <h3>{JSON.stringify(stats)}</h3> */}
       <button onClick={handleData} >getData</button>
-        {/* {!stats ? console.log('nostats') : stats.map(rec => <Record index={rec.id} examples={rec.examples} name={rec.name} prompt={rec.prompt} />)} */}
         <Form />    
-        {!stats ? console.log('nostats') : <Record index={stats[0].id} examples={stats[0].examples} name={stats[0].name} prompt={stats[0].prompt} />}
+        {!stats ? console.log('nostats') : stats.map(rec => <Record index={rec.id} examples={rec.examples} name={rec.name} prompt={rec.prompt} />)}
+        {/* {!stats ? console.log('nostats') : <Record index={stats[0].id} examples={stats[0].examples} name={stats[0].name} prompt={stats[0].prompt} />} */}
     </div>
   );
 };
