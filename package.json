@@ -2,11 +2,10 @@
   "name": "leetcode-tracter",
   "version": "1.0.0",
   "description": "Track toy problem stats",
-  "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack --watch",
-    "server": "nodemon /server/index.js",
-    "test": "nodemon /server/index.js"
+    "start": "webpack -w",
+    "server": "nodemon server/index.js",
+    "test": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,13 +26,21 @@
     "bluebird": "^3.7.2",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "mongoose": "^6.3.4",
     "mysql2": "^2.3.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-runtime": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.5",
     "nodemon": "^2.0.16",
     "styled-components": "^5.3.5",
-    "webpack": "^5.72.1"
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
   }
 }

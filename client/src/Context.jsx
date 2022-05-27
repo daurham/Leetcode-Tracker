@@ -1,17 +1,30 @@
-import { useEffect, useContext, React } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect, useMemo, useContext, createContext } from 'react';
 import App from './components/App';
 
 
-// export React.createContext()
+const StatData = createContext();
+export const useData = () => useContext(StatData);
 
-export default Context = function() {
+export default function Context() {
+  const [stats, setStats] = useState();
 
-    const value = {};
-    return (
+  // if (!stats) {
+  const getData = () => {
+    console.log('gettingData in context');
+    axios.get('/track/')
+      .then(res => setStats(() => res.data))
+      .catch(console.log);
+  };
+
+  const value = useMemo(() => ({
+    stats, setStats, getData
+  }), [stats]);
+  return (
     <>
-        <Provider value={value}>
-            <App />
-        </Provider>
+      <StatData.Provider value={value}>
+        <App />
+      </StatData.Provider>
     </>
-    );
+  );
 };

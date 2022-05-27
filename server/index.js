@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
-const controller = require('./controller');
-require('dotenv').config();
+const ctlr = require('./controller');
 
 const app = express();
 const PORT = process.env.USER_PORT || 3000;
@@ -15,6 +14,6 @@ app.post('/track/', ctlr.postData);
 app.put('/track/', ctlr.updateData);
 app.delete('/track/', ctlr.deleteData);
 
-app.use(express.static(path.join(__dirname, 'client/src')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.listen(PORT, () => console.log('Listening to port ' + PORT));
+app.listen(PORT, () => console.log(`Listening to port ${PORT} -> http://localhost:3000`));
