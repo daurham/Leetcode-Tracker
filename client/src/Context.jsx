@@ -9,9 +9,7 @@ export const useData = () => useContext(StatData);
 export default function Context() {
   const [stats, setStats] = useState();
 
-  // if (!stats) {
   const getData = () => {
-    console.log('gettingData in context');
     axios.get('/track/')
       .then(res => setStats(() => res.data))
       .catch(console.log);

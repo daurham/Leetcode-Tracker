@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const ExampleInput = ({handleInput, id}) => {
   const [input, setInput] = useState();
-  console.log(id)
   return (
     <div>
       <input onChange={(e) => setInput(() => e.target.value)}></input>

@@ -4,7 +4,11 @@ const getData = (req, res) => {
   model.getData(req, res);
 };
 const postData = (req, res) => {
-  model.postData(req, res);
+  let data = req.body;
+  for (let key in data) {
+    if (data[key] === undefined) data[key] = 'null'
+  }
+  model.postData(data, res);
 };
 const updateData = (req, res) => {
   model.updateData(req, res);

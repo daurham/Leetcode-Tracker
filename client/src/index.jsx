@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Context from './Context';
 
-const app = document.getElementById('app');
-ReactDOM.render(<Context />, app);
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(<Context />);
