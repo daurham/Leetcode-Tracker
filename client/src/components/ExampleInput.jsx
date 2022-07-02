@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import styled from 'styled-components';
 
 const ExampleInput = ({handleInput, id}) => {
   const [input, setInput] = useState();
+  console.log(id);
   return (
-    <div>
+    <SpanContainer>
       <input onChange={(e) => setInput(() => e.target.value)}></input>
-      <button onClick={e => {e.preventDefault(); handleInput({id, input})}}>+</button>
-    </div>
+      <Button onClick={e => {e.preventDefault(); handleInput({id, input})}}>+</Button>
+    </SpanContainer>
   );
 };
 
 export default ExampleInput;
+
+const SpanContainer = styled.span`
+  display: flex;
+`;
